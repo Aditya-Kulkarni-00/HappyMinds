@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Happy Minds</string>
+    <string-array name="colleges">
+        <item>PVG College</item>
+        <item>Modern College</item>
+        <item>Ferguson College</item>
+        <item>COEP College</item>
+        <item>PICT College</item>
+    </string-array>
+    <string-array name="states">
+        <item>Maharashtra</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Pune</item>
+        <item>Satara</item>
+        <item>Aurangabad</item>
+        <item>Aurangabad</item>
+    </string-array>
+</resources>
