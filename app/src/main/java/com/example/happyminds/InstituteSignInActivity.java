@@ -1,5 +1,6 @@
 package com.example.happyminds;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +18,11 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.signin.SignInOptions;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class InstituteSignInActivity extends AppCompatActivity {
     GoogleSignInOptions googleSignInOptions;
@@ -24,6 +30,8 @@ public class InstituteSignInActivity extends AppCompatActivity {
     public static GoogleSignInClient googleSignInClient;
     int RC_SIGN_IN = 1;
     SignInButton signInButton;
+    FirebaseDatabase database;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +65,30 @@ public class InstituteSignInActivity extends AppCompatActivity {
         }
     }
 
+    private void verify(String UiD){
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("colleges");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChild(UiD)){
+                    Intent intent = new Intent(getApplicationContext(), InstituteDashboardActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(getApplicationContext(), InstituteEnterDetailsActivity.class);
+                    startActivity(intent);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(InstituteSignInActivity.this, "Internal Error 500 : Try Again", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
     private void signIn(GoogleSignInClient client){
         Intent signInIntent = client.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -64,9 +96,9 @@ public class InstituteSignInActivity extends AppCompatActivity {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask){
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            verify(account.getId());
             Toast.makeText(this, "Successfully Signed In Yay!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getApplicationContext(), InstituteEnterDetailsActivity.class);
-            startActivity(intent);
+
         }catch (ApiException exception){
             Toast.makeText(this, "Google Sign In Failed", Toast.LENGTH_SHORT).show();
         }

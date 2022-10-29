@@ -38,7 +38,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/StudentSignInButton"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -47,7 +47,7 @@
             android:text="SIGN IN" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/StudentSignUpButton"
             android:textStyle="bold"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"

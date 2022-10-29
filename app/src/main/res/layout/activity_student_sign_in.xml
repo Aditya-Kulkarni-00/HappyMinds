@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="50sp"
+    android:background="@drawable/background"
+    android:layout_height="match_parent"
+    tools:context=".StudentSignIn">
+    <RelativeLayout
+        android:id="@+id/institutelayout"
+        android:layout_marginTop="100sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/logo" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_marginTop="30sp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/institutelayout"
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/student" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_below="@id/imageView5"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_marginTop="10sp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:text="SIGN IN" />
+
+    <LinearLayout
+        android:layout_below="@id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70sp"
+        android:paddingVertical="20sp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="20sp"
+            android:minHeight="48dp"
+            android:hint="Mobile No" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:minHeight="48dp"
+            android:inputType="textPersonName"
+            android:hint="Password" />
+
+        <TextView
+            android:id="@+id/StudentForgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="viewEnd"
+            android:minHeight="48dp"
+            android:clickable="true"
+            android:textColor="#ff0000"
+            android:textSize="20sp"
+            android:text="Forgot Password"
+            android:focusable="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="LOGIN" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
