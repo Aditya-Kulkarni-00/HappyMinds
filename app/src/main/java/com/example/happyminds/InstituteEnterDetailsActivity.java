@@ -93,14 +93,14 @@ public class InstituteEnterDetailsActivity extends AppCompatActivity {
             return false;
         }
 
-        if(phone.getText().toString().equals("")){
+        if(phone.getText().toString().equals("") || phone.getText().toString().length() < 10){
             return false;
         }
 
-        if(telephone.getText().toString().equals("")){
+        if(telephone.getText().toString().equals("") || telephone.getText().toString().length() < 10){
             return false;
         }
-        if(pinCode.getText().toString().equals("")) {
+        if(pinCode.getText().toString().equals("") || pinCode.getText().toString().length() < 6) {
             return false;
         }
         return true;

@@ -5,10 +5,53 @@
     android:layout_height="match_parent"
     tools:context=".InstituteStatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@drawable/background"
+        android:paddingHorizontal="50sp"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/insituteProfileFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo">
+
+        </ImageView>
+    </RelativeLayout>
+    <RelativeLayout
+
+        android:id="@+id/insituteProfileFragmentLayout2"
+        android:layout_below="@id/insituteProfileFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp">
+
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="STATISTICS"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+        <LinearLayout
+            android:layout_marginTop="50sp"
+            android:layout_below="@id/insituteProfileFragmentLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>

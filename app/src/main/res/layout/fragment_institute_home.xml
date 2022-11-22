@@ -41,9 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textStyle="bold"
+                android:text="WELCOME"
                 android:textSize="24sp"
-                android:text="WELCOME" />
+                android:textStyle="bold" />
         </RelativeLayout>
 
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="HOME"
+        android:id="@+id/bottomNavHome"
+        android:icon="@drawable/institutehome"
+        />
+    <item
+        android:title="UPLOAD"
+        android:id="@+id/bottomNavUpload"
+        android:icon="@drawable/instituteupload"
+        />
+    <item
+        android:title="DATA"
+        android:id="@+id/bottomNavData"
+        android:icon="@drawable/institutedata"
+        />
+    <item
+        android:title="STATISTICS"
+        android:id="@+id/bottomNavStats"
+        android:icon="@drawable/institutestatistics"
+        />
+    <item
+        android:title="PROFILE"
+        android:id="@+id/bottomNavProfile"
+        android:icon="@drawable/instituteprofile"
+        />
+</menu>

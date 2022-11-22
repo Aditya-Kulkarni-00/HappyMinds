@@ -40,7 +40,7 @@
         android:text="SIGN IN" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/GuestLoginActivityUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
@@ -53,10 +53,10 @@
         android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/GuestLoginActivitySignIn"
         android:layout_marginTop="150sp"
         android:layout_centerInParent="true"
-        android:layout_below="@id/editTextTextPersonName2"
+        android:layout_below="@id/GuestLoginActivityUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"

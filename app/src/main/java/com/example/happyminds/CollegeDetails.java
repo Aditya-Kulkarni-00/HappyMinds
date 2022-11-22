@@ -19,10 +19,6 @@ public class CollegeDetails {
         return  null;
     }
 
-    public void addStudent(String mobile){
-        students.add(new StudentDetails(mobile));
-    }
-
     public CollegeDetails(String name, String email, String address, String pincode, String phone, String telephone, String city, String state) {
         this.name = name;
         this.email = email;

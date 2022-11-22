@@ -1,14 +1,18 @@
 package com.example.happyminds;
 
 public class StudentDetails {
-    String mobile;
+    String mobile, rollno, age , name;
+
 
     public StudentDetails(){
 
     }
 
-    public StudentDetails(String mobile) {
+    public StudentDetails(String mobile, String rollno, String age, String name) {
         this.mobile = mobile;
+        this.rollno = rollno;
+        this.age = age;
+        this.name = name;
     }
 
     public String getMobile() {
@@ -20,4 +24,27 @@ public class StudentDetails {
     }
 
 
+    public String getRollno() {
+        return rollno;
+    }
+
+    public void setRollno(String rollno) {
+        this.rollno = rollno;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

@@ -5,10 +5,122 @@
     android:layout_height="match_parent"
     tools:context=".InstituteUploadFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:paddingHorizontal="50sp"
+        android:background="@drawable/background"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/insituteUploadFragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40sp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/logo">
+
+        </ImageView>
+    </RelativeLayout>
+        <RelativeLayout
+
+            android:id="@+id/insituteUploadFragmentLayout2"
+            android:layout_below="@id/insituteUploadFragmentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40sp">
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Upload / Download Details"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_below="@id/insituteUploadFragmentLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:drawableLeft="@drawable/downloadstudent"
+                android:id="@+id/StudentDownloadTemplateButton"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STUDENT DATA TEMPLATE " />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:paddingVertical="20sp"
+                    android:paddingHorizontal="30sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:drawableLeft="@drawable/downloadstudent"
+                        android:drawablePadding="13sp"
+                        android:id="@+id/textView11"
+                        android:textStyle="bold"
+                        android:layout_marginVertical="10sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Upload File" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/StudentUploadDetailsButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Choose File" />
+
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:id="@+id/StudentDetailsFileChosen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="No File Choosen" />
+                    </LinearLayout>
+
+                    <Button
+                        android:backgroundTint="@color/teal_700"
+                        android:id="@+id/StudentDetailsSubmitButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SUBMIT" />
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>
