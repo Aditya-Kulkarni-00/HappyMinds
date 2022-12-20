@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:paddingHorizontal="30dp"
+    android:background="@drawable/background"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".EditInstituteDetailsActivity">
+    <Spinner
+        android:contentDescription="Colleges"
+        android:layout_marginTop="140sp"
+        android:id="@+id/EditInstituteDetailsCollege"
+        android:minHeight="48dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <EditText
+        android:hint="Address"
+        android:layout_marginVertical="20sp"
+        android:minHeight="48dp"
+        android:id="@+id/EditInstituteDetailsAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <LinearLayout
+        android:layout_marginVertical="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/EditInstituteDetailsPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter Phone"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            />
+
+        <EditText
+            android:id="@+id/EditInstituteDetailsTelephone"
+            android:minHeight="48dp"
+            android:hint="Enter Telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginVertical="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/EditInstituteDetailsCities"
+            android:contentDescription="Cities"
+            android:layout_width="match_parent"
+            android:minHeight="48dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <Spinner
+            android:id="@+id/EditInstituteDetailsStates"
+            android:contentDescription="States"
+            android:layout_width="match_parent"
+            android:minHeight="48dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginVertical="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/EditInstituteDetailsPinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Pincode"
+            android:minHeight="48dp"
+            android:inputType="number" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/EditInstituteDetailsSubmit"
+        android:layout_width="match_parent"
+        android:backgroundTint="#00FF00"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:text="Submit" />
+</LinearLayout>

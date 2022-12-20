@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:paddingHorizontal="30sp"
+    tools:context=".InstituteFeedbackActivity">
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20sp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:layout_marginVertical="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="19sp"
+        android:text="Feedback Form" />
+
+    <EditText
+        android:id="@+id/feedbacktext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="enter feedback here"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp" />
+
+    <Button
+        android:layout_marginVertical="10sp"
+        android:id="@+id/submitfeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#008100"
+        android:text="Submit Feedback" />
+
+    <TextView
+        android:id="@+id/feedbackdisplay"
+        android:enabled="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thank you for submitting feedback" />
+</LinearLayout>

@@ -23,20 +23,17 @@ public class GuestLoginActivity extends AppCompatActivity {
 
         signIn = (Button) findViewById(R.id.GuestLoginActivitySignIn);
         username = (EditText) findViewById(R.id.GuestLoginActivityUserName);
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String name = username.getText().toString();
+        signIn.setOnClickListener(view -> {
+            String name = username.getText().toString();
 
-                if(name.equals("")){
-                    Toast.makeText(GuestLoginActivity.this, "Enter Your Name to Continue!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                Intent intent = new Intent(getApplicationContext(), GuestHomeScreenActivity.class);
-                intent.putExtra("name", name);
-                startActivity(intent);
+            if(name.equals("")){
+                Toast.makeText(GuestLoginActivity.this, "Enter Your Name to Continue!", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            Intent intent = new Intent(getApplicationContext(), GuestHomeScreenActivity.class);
+            intent.putExtra("name", name);
+            startActivity(intent);
         });
     }
 }

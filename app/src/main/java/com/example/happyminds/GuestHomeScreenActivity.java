@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
@@ -23,7 +24,7 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
     Boolean isPlaying;
     String username;
     TextView user, greeting;
-    ImageView changeSong , Logout ;
+    ImageView changeSong , Logout , book1, book2, book3 , book4 ;
     Button SoundCorner, BreathWork, Experts , Helpline;
     CarouselView view;
     @Override
@@ -38,7 +39,11 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
         greeting = (TextView) findViewById(R.id.GuestHomeGreeting);
         username = intent.getStringExtra("name");
         user.setText(username);
-
+        Logout = findViewById(R.id.guestlogout);
+        book1 = (ImageView) findViewById(R.id.book1);
+        book2 = (ImageView) findViewById(R.id.book2);
+        book3 = (ImageView) findViewById(R.id.book3);
+        book4 = (ImageView) findViewById(R.id.book4);
         SoundCorner = (Button) findViewById(R.id.GuestHomeSoundCorner);
         BreathWork  = (Button) findViewById(R.id.GuestHomeBreathwork);
         Experts = (Button) findViewById(R.id.GuestHomeExperts);
@@ -61,14 +66,45 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
             }
         });
 
-        view.setPageCount(backgroundQuoteImages.length);
-        view.setImageListener(new ImageListener() {
+        BreathWork.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void setImageForPosition(int position, ImageView imageView) {
-                imageView.setImageResource(backgroundQuoteImages[position]);
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext(), BreathworkActivity.class);
+                startActivity(intent1);
+                finish();
             }
         });
 
+        view.setPageCount(backgroundQuoteImages.length);
+        view.setImageListener((position, imageView) -> imageView.setImageResource(backgroundQuoteImages[position]));
+
+
+        book1.setOnClickListener(view -> {
+            Intent bookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://amzn.to/3fd8PHk"));
+            startActivity(bookIntent);
+        });
+
+        book2.setOnClickListener(view -> {
+            Intent bookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://amzn.to/3TKeZ0L"));
+            startActivity(bookIntent);
+        });
+
+        book3.setOnClickListener(view -> {
+            Intent bookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://amzn.to/3zrFShP"));
+            startActivity(bookIntent);
+        });
+
+        book4.setOnClickListener(view -> {
+            Intent bookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://amzn.to/3fcXoPW"));
+            startActivity(bookIntent);
+        });
+
+        Logout.setOnClickListener(view -> {
+            stopService(musicIntent);
+            Intent returnIntent = new Intent(getApplicationContext(), GuestLoginActivity.class);
+            startActivity(returnIntent);
+            finish();
+        });
     }
 
     private void greeting(TextView greetingView ){

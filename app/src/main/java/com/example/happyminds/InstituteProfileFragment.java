@@ -75,8 +75,16 @@ public class InstituteProfileFragment extends Fragment {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(requireContext() , InstituteFeedbackActivity.class));
             }
+        });
+
+        aboutUs.setOnClickListener(view1 -> {
+            startActivity(new Intent(requireContext() , InstitutueAboutUs.class));
+        });
+
+        faq.setOnClickListener(view1 -> {
+            startActivity(new Intent(requireContext() , InstituteFAQActivity.class));
         });
     }
 }

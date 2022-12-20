@@ -3,6 +3,8 @@ package com.example.happyminds;
 public class StudentDetails {
     String mobile, rollno, age , name;
 
+    String password;
+
 
     public StudentDetails(){
 
@@ -47,4 +49,14 @@ public class StudentDetails {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

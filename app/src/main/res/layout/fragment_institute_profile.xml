@@ -135,7 +135,7 @@
                     android:layout_weight="1"
                     android:contentDescription="Facebook"
                     android:minHeight="48dp"
-                    android:src="@drawable/institutehomefragmentname" />
+                    android:src="@drawable/ig" />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
@@ -144,7 +144,7 @@
                     android:layout_weight="1"
                     android:minHeight="48dp"
                     android:contentDescription="Facebook"
-                    android:src="@drawable/institutehomefragmentname" />
+                    android:src="@drawable/fb" />
 
                 <ImageButton
                     android:id="@+id/imageButton3"
@@ -153,7 +153,7 @@
                     android:layout_weight="1"
                     android:contentDescription="Facebook"
                     android:minHeight="48dp"
-                    android:src="@drawable/institutehomefragmentaddress" />
+                    android:src="@drawable/twit" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -162,7 +162,7 @@
                     android:layout_weight="1"
                     android:contentDescription="Facebook"
                     android:minHeight="48dp"
-                    android:src="@drawable/institutehomefragmentname" />
+                    android:src="@drawable/ln" />
 
                 <ImageButton
                     android:id="@+id/imageButton4"
@@ -171,7 +171,7 @@
                     android:layout_weight="1"
                     android:contentDescription="Facebook"
                     android:minHeight="48dp"
-                    android:src="@drawable/institutehomefragmentname" />
+                    android:src="@drawable/yt" />
             </LinearLayout>
         </LinearLayout>
 

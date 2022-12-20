@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "874138682211",
-    "project_id": "happy-minds-38ecb",
-    "storage_bucket": "happy-minds-38ecb.appspot.com"
+    "project_number": "559206134696",
+    "project_id": "happyminds-127d7",
+    "storage_bucket": "happyminds-127d7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:874138682211:android:c7e83ada3961885bc48956",
+        "mobilesdk_app_id": "1:559206134696:android:05361f193b56d9341a239d",
         "android_client_info": {
           "package_name": "com.example.happyminds"
         }
       },
       "oauth_client": [
         {
-          "client_id": "874138682211-mto3gs0cogbpkmv6sbbkvjhqfogt73m9.apps.googleusercontent.com",
+          "client_id": "559206134696-6uhbka3r3mt747uvbcvs058v08djiphd.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAEqlXLpjTePfQOXtHdYeFEY3CoT-Y0g-0"
+          "current_key": "AIzaSyCANgdds6tJTzbgKSzGXeGJT4AIR0bktDU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "874138682211-mto3gs0cogbpkmv6sbbkvjhqfogt73m9.apps.googleusercontent.com",
+              "client_id": "559206134696-6uhbka3r3mt747uvbcvs058v08djiphd.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

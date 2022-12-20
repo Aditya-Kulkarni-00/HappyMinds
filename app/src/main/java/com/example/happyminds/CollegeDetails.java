@@ -1,5 +1,8 @@
 package com.example.happyminds;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -10,7 +13,11 @@ public class CollegeDetails {
 
     }
 
-    public StudentDetails getStudentByMobile(String mobile){
+    public StudentDetails getStudentByMobile(String mobile, Context context){
+        if(students ==null){
+            Toast.makeText(context, "Please Tell College to Enter Details", Toast.LENGTH_SHORT).show();
+            return null;
+        }
         for (int i = 0; i < students.size(); i++) {
             if(Objects.equals(students.get(i).getMobile(), mobile)){
                 return students.get(i);
