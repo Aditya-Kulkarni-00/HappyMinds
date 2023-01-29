@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="HOME"
+        android:id="@+id/studentNavHome"
+        android:icon="@drawable/studenticonshome"
+        />
+    <item
+        android:title="TEST"
+        android:id="@+id/studentNavTest"
+        android:icon="@drawable/studenticonstest"
+        />
+    <item
+        android:title="ACTIVITY"
+        android:id="@+id/studentNavActivity"
+        android:icon="@drawable/studenticonsactivity"
+        />
+    <item
+        android:title="COMMUNITY"
+        android:id="@+id/studentNavCommunity"
+        android:icon="@drawable/studenticonscommunity"
+        />
+    <item
+        android:title="PROFILE"
+        android:id="@+id/studentNavProfile"
+        android:icon="@drawable/studenticonsprofile"
+        />
+</menu>
