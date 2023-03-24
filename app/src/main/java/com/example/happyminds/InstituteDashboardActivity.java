@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class InstituteDashboardActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,29 +24,32 @@ public class InstituteDashboardActivity extends AppCompatActivity {
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.InstituteDashboardBottomNav);
         loadFragment(new InstituteHomeFragment());
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment = null;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment fragment = null;
 
-                switch (item.getItemId()){
-                    case R.id.bottomNavHome : fragment = new InstituteHomeFragment(); break;
-                    case R.id.bottomNavData: fragment = new InstituteDataFragment();break;
-                    case R.id.bottomNavProfile: fragment = new InstituteProfileFragment(); break;
-                    case R.id.bottomNavStats: fragment = new InstituteStatsFragment();break;
-                    case R.id.bottomNavUpload: fragment = new InstituteUploadFragment();break;
-                }
-
-                if(fragment !=null){
-                    loadFragment(fragment);
-                }
-
-                return true;
+            switch (item.getItemId()){
+                case R.id.bottomNavHome : fragment = new InstituteHomeFragment(); break;
+                case R.id.bottomNavData: fragment = new InstituteDataFragment(getApplicationContext() , InstituteDashboardActivity.this);break;
+                case R.id.bottomNavProfile: fragment = new InstituteProfileFragment(); break;
+                case R.id.bottomNavStats: fragment = new InstituteStatsFragment();break;
+                case R.id.bottomNavUpload: fragment = new InstituteUploadFragment(this);break;
             }
+
+            if(fragment !=null){
+                loadFragment(fragment);
+            }
+
+            return true;
         });
     }
 
     void loadFragment(Fragment fragment){
         getSupportFragmentManager().beginTransaction().replace(R.id.InstituteDashboardRelativeLayout, fragment).commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        System.exit(1);
     }
 }

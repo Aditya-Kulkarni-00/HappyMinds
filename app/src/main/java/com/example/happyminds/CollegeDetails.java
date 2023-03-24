@@ -7,6 +7,16 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class CollegeDetails {
+    String UID;
+
+    public String getUID() {
+        return UID;
+    }
+
+    public void setUID(String UID) {
+        this.UID = UID;
+    }
+
     String name, email, address, pincode, phone , telephone, city, state;
     ArrayList<StudentDetails> students;
     public CollegeDetails(){
@@ -15,6 +25,7 @@ public class CollegeDetails {
 
     public StudentDetails getStudentByMobile(String mobile, Context context){
         if(students ==null){
+            Toast.makeText(context, "DB EMPTY for College" + name, Toast.LENGTH_SHORT).show();
             Toast.makeText(context, "Please Tell College to Enter Details", Toast.LENGTH_SHORT).show();
             return null;
         }

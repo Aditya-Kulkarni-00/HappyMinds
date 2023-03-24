@@ -10,5 +10,10 @@ public class ExpertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expert);
+
+
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
     }
 }

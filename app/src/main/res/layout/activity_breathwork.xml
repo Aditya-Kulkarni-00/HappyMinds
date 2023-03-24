@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="8dp"
     android:orientation="vertical"
     android:background="@drawable/background"
     tools:context=".BreathworkActivity">
@@ -39,14 +38,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
-                        android:id="@+id/BreathworkRelax"
+                        android:id="@+id/b1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b1"
+                        tools:srcCompat="@drawable/b1" />
 
 
                 </LinearLayout>
@@ -73,13 +72,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b2"
+                        />
 
 
                 </LinearLayout>
@@ -106,13 +106,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b3"
+                        />
 
 
                 </LinearLayout>
@@ -148,13 +149,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b4"
+                         />
 
 
                 </LinearLayout>
@@ -181,13 +183,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b5" />
 
 
                 </LinearLayout>
@@ -214,13 +216,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b6" />
 
 
                 </LinearLayout>
@@ -255,13 +257,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b7"
+                       />
 
 
                 </LinearLayout>
@@ -289,13 +292,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b8"
+                         />
 
 
                 </LinearLayout>
@@ -322,13 +326,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20sp">
+                    android:paddingVertical="20sp">
 
                     <ImageView
+                        android:id="@+id/b9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/book2"
-                        tools:srcCompat="@drawable/book2" />
+                        android:src="@drawable/b9"
+                    />
 
 
                 </LinearLayout>

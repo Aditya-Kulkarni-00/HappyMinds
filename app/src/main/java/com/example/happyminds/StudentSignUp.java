@@ -64,7 +64,7 @@ public class StudentSignUp extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("colleges");
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 boolean foundInDatabase = false;
@@ -77,7 +77,7 @@ public class StudentSignUp extends AppCompatActivity {
                     if(details != null){
                         displayName.setText(details.getName());
                         foundInDatabase = true;
-                        Intent intent = new Intent(getApplicationContext(), StudentCreatePassword.class);
+                        Intent intent = new Intent(getApplicationContext(), StudentSetPasswordActivity.class);
                         intent.putExtra("mobile", phone.getText().toString());
                         startActivity(intent);
                     }

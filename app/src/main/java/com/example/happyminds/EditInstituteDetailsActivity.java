@@ -106,7 +106,7 @@ public class EditInstituteDetailsActivity extends AppCompatActivity {
             String id = account.getId();
 
             if(id != null){
-                reference.child(id).addValueEventListener(new ValueEventListener() {
+                reference.child(id).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         CollegeDetails details = snapshot.getValue(CollegeDetails.class);

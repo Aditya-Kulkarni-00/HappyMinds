@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="40sp"
-    android:background="@drawable/background"
+    android:background="#54E5EE"
     android:orientation="vertical"
     tools:context=".SoundCornerActivity">
 
     <LinearLayout
-        android:layout_marginVertical="10sp"
+        android:layout_marginVertical="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -25,25 +25,17 @@
             android:drawableEnd="@drawable/soundcorner7"
             android:text="Sound Corner" />
     </LinearLayout>
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <LinearLayout
+        android:layout_marginTop="30sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/imageButton7"
+                    android:id="@+id/sound1"
                     android:layout_width="wrap_content"
                     android:layout_weight="1"
+                    android:background="#54E5EE"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/soundcorner1" />
 
@@ -53,31 +45,24 @@
                     android:layout_weight="1" />
 
                 <ImageButton
-                    android:id="@+id/imageButton8"
+                    android:id="@+id/sound2"
                     android:layout_width="wrap_content"
+                    android:background="#54E5EE"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/soundcorner2" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
 
             <LinearLayout
+                android:layout_marginTop="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/imageButton9"
+                    android:id="@+id/sound3"
+                    android:background="#54E5EE"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,32 +74,27 @@
                     android:layout_weight="1" />
 
                 <ImageButton
-                    android:id="@+id/imageButton10"
+                    android:id="@+id/sound4"
+                    android:background="#54E5EE"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/soundcorner4" />
 
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+
 
             <LinearLayout
+                android:layout_marginTop="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/imageButton11"
+                    android:background="#54E5EE"
+                    android:id="@+id/sound5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -126,12 +106,11 @@
                     android:layout_weight="1" />
 
                 <ImageButton
-                    android:id="@+id/imageButton12"
+                    android:background="#54E5EE"
+                    android:id="@+id/sound6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/soundcorner6" />
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
 </LinearLayout>

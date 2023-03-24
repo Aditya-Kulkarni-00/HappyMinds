@@ -58,7 +58,7 @@ public class InstituteHomeFragment extends Fragment {
         account = GoogleSignIn.getLastSignedInAccount(requireContext());
         reference = database.getReference("colleges").child(Objects.requireNonNull(account.getId()));
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 CollegeDetails details = (CollegeDetails) snapshot.getValue(CollegeDetails.class);

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,32 +32,29 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
 
-import org.w3c.dom.Text;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Locale;
 
 
 public class InstituteUploadFragment extends Fragment {
-    Button StudentDownloadTemplateButton, StudentUploadDetailsButton, StudentDetailsSubmitButton;
+    Button StudentDownloadTemplateButton, StudentUploadDetailsButton;
     TextView StudentDetailsFileChosen;
     FirebaseDatabase database;
     DatabaseReference reference;
     GoogleSignInAccount account;
+    Activity activity1;
     // request codes
     private final int WRITE_CSV = 1;
     private final int READ_CSV = 0;
 
     public InstituteUploadFragment() {
+    }
+
+    public InstituteUploadFragment(Activity activity) {
         // Required empty public constructor
+        this.activity1 = activity;
     }
 
     @Override
@@ -113,17 +108,20 @@ public class InstituteUploadFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("colleges").child(UID);
 
-        reference.addValueEventListener(new ValueEventListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<StudentDetails> details = readFile(uri);
+                ArrayList<StudentDetails> details = readFile(uri ,  UID);
                 CollegeDetails details1 = snapshot.getValue(CollegeDetails.class);
                 if(details!=null){
-                    for (int i = 0; i < details.size(); i++) {
                         if (details1 != null) {
-                            details1.setStudents(details);
+                           if( details1.getStudents()!=null){
+                               details1.getStudents().addAll(details);
+                           }else {
+                               details1.setStudents(details);
+                           }
+
                         }
-                    }
                 }else{
                     Toast.makeText(requireContext(), "Failed to Read CSV", Toast.LENGTH_SHORT).show();
                 }
@@ -144,10 +142,10 @@ public class InstituteUploadFragment extends Fragment {
 
     }
 
-    private ArrayList<StudentDetails> readFile(Uri uri) {
+    private ArrayList<StudentDetails> readFile(Uri uri, String UID) {
         try {
             ArrayList<StudentDetails> list = new ArrayList<>();
-            ParcelFileDescriptor descriptor = requireActivity().getContentResolver().openFileDescriptor(uri, "r");
+            ParcelFileDescriptor descriptor = activity1.getContentResolver().openFileDescriptor(uri, "r");
             FileReader fileReader = new FileReader(descriptor.getFileDescriptor());
             CSVReader reader = new CSVReaderBuilder(fileReader).withSkipLines(1).withKeepCarriageReturn(false).build();
             String[] nextRecord = reader.readNext();
@@ -160,6 +158,7 @@ public class InstituteUploadFragment extends Fragment {
                     String Mobile = nextRecord[3];
 
                     StudentDetails details = new StudentDetails(Mobile, Rollno, Age, Name);
+                    details.setCollegeUID(UID );
                     list.add(details);
 
                     nextRecord = reader.readNext();

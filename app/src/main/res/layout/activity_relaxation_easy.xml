@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="40sp"
+    tools:context=".ActivityRelaxationEasy">
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:layout_marginTop="40sp"
+        android:id="@+id/streches_easy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menstruation Streches" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_marginVertical="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="For A Deep Sleep" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_marginVertical="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stretch it Easy" />
+
+</LinearLayout>

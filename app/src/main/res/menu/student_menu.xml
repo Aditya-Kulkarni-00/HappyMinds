@@ -2,27 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="HOME"
-        android:id="@+id/bottomNavHome"
-        android:icon="@drawable/institutehome"
+        android:id="@+id/studentNavHome"
+        android:icon="@drawable/studenticonshome"
         />
     <item
-        android:title="UPLOAD"
-        android:id="@+id/bottomNavUpload"
-        android:icon="@drawable/instituteupload"
+        android:title="TEST"
+        android:id="@+id/studentNavTest"
+        android:icon="@drawable/studenticonstest"
         />
     <item
-        android:title="DATA"
-        android:id="@+id/bottomNavData"
-        android:icon="@drawable/institutedata"
+        android:title="ACTIVITY"
+        android:id="@+id/studentNavActivity"
+        android:icon="@drawable/studenticonsactivity"
         />
     <item
-        android:title="STATISTICS"
-        android:id="@+id/bottomNavStats"
-        android:icon="@drawable/institutestatistics"
+        android:title="COMMUNITY"
+        android:id="@+id/studentNavCommunity"
+        android:icon="@drawable/studenticonscommunity"
         />
     <item
         android:title="PROFILE"
-        android:id="@+id/bottomNavProfile"
-        android:icon="@drawable/instituteprofile"
+        android:id="@+id/studentNavProfile"
+        android:icon="@drawable/studenticonsprofile"
         />
 </menu>

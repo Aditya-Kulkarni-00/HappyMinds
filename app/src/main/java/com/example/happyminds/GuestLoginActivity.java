@@ -21,8 +21,8 @@ public class GuestLoginActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        signIn = (Button) findViewById(R.id.GuestLoginActivitySignIn);
-        username = (EditText) findViewById(R.id.GuestLoginActivityUserName);
+        signIn = findViewById(R.id.GuestLoginActivitySignIn);
+        username = findViewById(R.id.GuestLoginActivityUserName);
         signIn.setOnClickListener(view -> {
             String name = username.getText().toString();
 

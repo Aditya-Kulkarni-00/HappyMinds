@@ -52,7 +52,9 @@ public class InstituteProfileFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Intent intent = new Intent(requireActivity(), LoginActivity.class);
+                        requireActivity().finishAffinity();
                         startActivity(intent);
+
                     }
                 });
             }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".StudentDashboardActivity">
     <RelativeLayout
         android:id="@+id/StudentDashboardRelativeLayout"
@@ -16,6 +17,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/StudentDashboardNavBar"
         app:menu="@menu/student_menu"
         android:layout_alignParentBottom="true"
         >

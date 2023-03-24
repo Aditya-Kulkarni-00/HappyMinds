@@ -14,6 +14,10 @@ public class StudentLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
 
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
+
         signInButton = (Button) findViewById(R.id.StudentSignInButton);
         signUpButton = (Button) findViewById(R.id.StudentSignUpButton);
 
@@ -22,6 +26,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), StudentSignIn.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -30,6 +35,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), StudentSignUp.class);
                 startActivity(intent);
+                finish();
             }
         });
 

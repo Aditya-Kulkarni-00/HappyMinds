@@ -32,19 +32,21 @@ public class InstituteEnterDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_institute_enter_details);
+        if(getSupportActionBar()!=null){
+            getSupportActionBar().hide();
+        }
+        colleges = findViewById(R.id.spinner_colleges);
+        states = findViewById(R.id.spinner_states);
+        cities = findViewById(R.id.spinner_cities);
 
-        colleges = (Spinner) findViewById(R.id.spinner_colleges);
-        states = (Spinner) findViewById(R.id.spinner_states);
-        cities = (Spinner) findViewById(R.id.spinner_cities);
-
-        address = (EditText) findViewById(R.id.insituteEnterDetailsAddress);
-        phone= (EditText) findViewById(R.id.insituteEnterDetailsMobile);
-        telephone = (EditText) findViewById(R.id.insituteEnterDetailsTelephone);
-        pinCode = (EditText) findViewById(R.id.insituteEnterDetailsPinCode);
+        address = findViewById(R.id.insituteEnterDetailsAddress);
+        phone= findViewById(R.id.insituteEnterDetailsMobile);
+        telephone = findViewById(R.id.insituteEnterDetailsTelephone);
+        pinCode = findViewById(R.id.insituteEnterDetailsPinCode);
 
 
-        submitButton = (Button) findViewById(R.id.insituteEnterDetailsSubmit);
-        signOutButton = (Button) findViewById(R.id.insituteEnterDetailsSignOut);
+        submitButton = findViewById(R.id.insituteEnterDetailsSubmit);
+        signOutButton = findViewById(R.id.insituteEnterDetailsSignOut);
 
         ArrayAdapter<CharSequence> collegeAdapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.colleges, android.R.layout.simple_spinner_item);
         collegeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -127,6 +129,7 @@ public class InstituteEnterDetailsActivity extends AppCompatActivity {
 
             CollegeDetails details = new CollegeDetails(CollegeName, CollegeEmail, CollegeAddress, CollegePinCode, CollegePhone, CollegeTelephone, CollegeCity, CollegeState);
 //            details.addStudent("7020325304");
+            details.setUID(id);
             if(id !=null){
                 reference.child(id).setValue(details, new DatabaseReference.CompletionListener() {
                     @Override

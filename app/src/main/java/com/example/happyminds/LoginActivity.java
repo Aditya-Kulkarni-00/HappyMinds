@@ -40,12 +40,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        studentLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
-                startActivity(intent);
-            }
+        studentLogin.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), StudentLoginActivity.class);
+            startActivity(intent);
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+        System.exit(1);
     }
 }

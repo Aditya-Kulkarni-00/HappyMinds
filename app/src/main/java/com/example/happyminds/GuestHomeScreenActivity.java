@@ -8,10 +8,12 @@ import android.content.ServiceConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Process;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.synnapps.carouselview.CarouselView;
@@ -27,6 +29,8 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
     ImageView changeSong , Logout , book1, book2, book3 , book4 ;
     Button SoundCorner, BreathWork, Experts , Helpline;
     CarouselView view;
+    Intent musicIntent;
+    Boolean backgroundSoundPlaying = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,7 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         Intent intent = getIntent();
+        musicIntent = new Intent(getApplicationContext(), BackgroundMusicService.class);
         user=  (TextView) findViewById(R.id.GuestHomeScreenUsername);
         greeting = (TextView) findViewById(R.id.GuestHomeGreeting);
         username = intent.getStringExtra("name");
@@ -48,14 +53,12 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
         BreathWork  = (Button) findViewById(R.id.GuestHomeBreathwork);
         Experts = (Button) findViewById(R.id.GuestHomeExperts);
         Helpline = (Button)findViewById(R.id.GuestHomeHelpline);
-
+        changeSong = findViewById(R.id.changeBackground);
         view = (CarouselView) findViewById(R.id.BackgroundQuotes);
         int[] backgroundQuoteImages = {R.drawable.backgroundquotes1, R.drawable.backgroundquotes2,R.drawable.backgroundquotes3,  R.drawable.backgroundquotes4,R.drawable.backgroundquotes5};
 
         greeting(greeting);
-        Intent musicIntent = new Intent(getApplicationContext(), BackgroundMusicService.class);
-        musicIntent.putExtra("musicName", "waves");
-        startService(musicIntent);
+
 
         SoundCorner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +74,17 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent1 = new Intent(getApplicationContext(), BreathworkActivity.class);
                 startActivity(intent1);
-                finish();
+            }
+        });
+
+        changeSong.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(backgroundSoundPlaying){
+                    stopPlaying();
+                }else {
+                    startPlaying();
+                }
             }
         });
 
@@ -101,10 +114,34 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
 
         Logout.setOnClickListener(view -> {
             stopService(musicIntent);
-            Intent returnIntent = new Intent(getApplicationContext(), GuestLoginActivity.class);
+            finishAffinity();
+            Intent returnIntent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(returnIntent);
-            finish();
+
         });
+
+        Helpline.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext(), HelplineActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        Experts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(getApplicationContext() , ExpertActivity.class);
+                startActivity(intent1);
+            }
+        });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        stopPlaying();
+        finishAffinity();
     }
 
     private void greeting(TextView greetingView ){
@@ -114,13 +151,23 @@ public class GuestHomeScreenActivity extends AppCompatActivity {
             greetingView.setText("Good Morning");
         }else if(hour > 12 && hour < 17){
             greetingView.setText("Good Afternoon");
-        }
-        if(hour > 17 && hour < 20){
+        }else if(hour > 17 && hour < 20){
             greetingView.setText("Good Evening");
         }else {
             greetingView.setText("Good Night");
         }
 
 
+    }
+
+    private void startPlaying(){
+        musicIntent.putExtra("musicName", "waves");
+        startService(musicIntent);
+        backgroundSoundPlaying = true;
+    }
+
+    private void stopPlaying(){
+        stopService(musicIntent);
+        backgroundSoundPlaying = false;
     }
 }
